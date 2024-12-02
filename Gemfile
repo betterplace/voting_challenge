@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# Version from .tool-versions (can use asdf); default to 3.2+ (e.g. for dependabot)
+ruby file: ".tool-versions" rescue "~> 3.2"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -34,6 +37,9 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# State machine
+gem "aasm", "~> 5.5"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -43,6 +49,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Testing Framework
+  gem "rspec", "~> 3.13"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -50,6 +60,5 @@ group :development do
   gem "web-console"
 
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
-  gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
+  # gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 end
-

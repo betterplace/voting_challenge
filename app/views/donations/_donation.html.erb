@@ -1,0 +1,10 @@
+<div id="<%= dom_id donation %>">
+  <p>
+    <strong>Amount in cents:</strong>
+    <%= donation.amount_in_cents %>
+  </p>
+  <p>
+    <strong>Receiver:</strong>
+    <%= link_to donation.receiver.name, donation.receiver %>
+  </p>
+</div>
