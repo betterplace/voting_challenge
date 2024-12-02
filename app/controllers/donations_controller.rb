@@ -1,5 +1,7 @@
 class DonationsController < ApplicationController
   before_action :set_donation, only: %i[ show edit update destroy ]
+  # following line makes the cURL request from the README work
+  skip_before_action :verify_authenticity_token, only: [:create] if Rails.env.development?
 
   # GET /donations or /donations.json
   def index
@@ -21,10 +23,8 @@ class DonationsController < ApplicationController
 
   # POST /donations or /donations.json
   def create
-    @donation = Donation.new(donation_params)
-
     respond_to do |format|
-      if @donation.save
+      if @donation = Donate.new.call(donation_params["receiver_id"], donation_params["amount_in_cents"])
         format.html { redirect_to @donation, notice: "Donation was successfully created." }
         format.json { render :show, status: :created, location: @donation }
       else
@@ -65,6 +65,6 @@ class DonationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donation_params
-      params.require(:donation).permit(:amount_in_cents)
+      params.require(:donation).permit(:amount_in_cents, :receiver_id)
     end
 end

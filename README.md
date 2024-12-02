@@ -31,6 +31,11 @@ Your task is to implement a voting feature based on the following user story and
 
 ### Background information
 
-During a charity stream, streamers can initiate votes (e.g., challenges, decisions etc.) via a voting feature. Viewers participate by donating to cast their votes for the options provided. The option with the highest total donation amount wins. The voting process is visualized as an overlay on the stream.
+During a charity stream, streamers can initiate votes (e.g., challenges, decisions etc.) via a voting feature. Viewers participate by donating to cast their votes for the options provided. The option with the highest voting count wins. The voting process is visualized as an overlay on the stream.
 
-##
+You can simulate a successful donation request with
+```
+curl -X POST http://127.0.0.1:3000/donations \
+-d "donation[receiver_id]=1&donation[amount_in_cents]=5000" \
+-w "Status Code: %{http_code}\n"
+```
