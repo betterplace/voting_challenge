@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_02_105218) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_02_105923) do
+  create_table "donations", force: :cascade do |t|
+    t.integer "receiver_id"
+    t.integer "amount_in_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_donations_on_receiver_id"
+  end
+
   create_table "receivers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "donations", "receivers"
 end
