@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_02_105923) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_02_114954) do
   create_table "donations", force: :cascade do |t|
     t.integer "receiver_id"
     t.integer "amount_in_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "aasm_state"
+    t.datetime "confirmed_at"
+    t.datetime "failed_at"
+    t.datetime "revoked_at"
     t.index ["receiver_id"], name: "index_donations_on_receiver_id"
   end
 
