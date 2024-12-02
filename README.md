@@ -1,24 +1,36 @@
-# README
+# Voting feature coding challenge for betterplace.org
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a small skeleton rails application that serves as the foundation for our coding challenge.
 
-Things you may want to cover:
+Please follow the steps below to start the challenge:
+1. create a private repository called `betterplace_coding_challenge`
+2. Run the following in its parent directory
+```
+git clone git@github.com:betterplace/voting_challenge.git
+cd voting_challenge
+git remote remove origin
+git remote add origin git@github.com:YOUR-GITHUB-USERNAME/betterplace_coding_challenge.git
+git push -u origin main
+```
+3. Solve the challenge
+4. Provide access to betterplace devs so they can have a look. You will receive the email addresses for this during the application process. **Please do not make your solutions public!**
 
-* Ruby version
 
-* System dependencies
+## Setup
 
-* Configuration
+There is nothing out of the ordinary in the application all the commands from a basic rails app should work. You only need to run the bundle.
 
-* Database creation
+```
+bundle install
+```
 
-* Database initialization
+## The challenge
 
-* How to run the test suite
+Your task is to implement a voting feature based on the following user story and requirements.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Background information
 
-* ...
+During a charity stream, streamers can initiate votes (e.g., challenges, decisions etc.) via a voting feature. Viewers participate by donating to cast their votes for the options provided. The option with the highest total donation amount wins. The voting process is visualized as an overlay on the stream.
+
+##
