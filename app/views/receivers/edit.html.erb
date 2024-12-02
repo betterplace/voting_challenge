@@ -1,0 +1,12 @@
+<% content_for :title, "Editing receiver" %>
+
+<h1>Editing receiver</h1>
+
+<%= render "form", receiver: @receiver %>
+
+<br>
+
+<div>
+  <%= link_to "Show this receiver", @receiver %> |
+  <%= link_to "Back to receivers", receivers_path %>
+</div>
