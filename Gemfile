@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# Version from .tool-versions (can use asdf); default to 3.2+ (e.g. for dependabot)
+ruby file: '.tool-versions' rescue '~> 3.2'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -57,5 +60,5 @@ group :development do
   gem "web-console"
 
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
-  gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
+  #gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 end
