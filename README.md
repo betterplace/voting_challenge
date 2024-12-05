@@ -19,6 +19,7 @@ Please follow the steps below before starting:
 There is nothing out of the ordinary in the application all the commands from a basic rails app should work. You only need to run the bundle.
 ```
 bundle install
+rails db:setup
 ```
 
 You can simulate a successful donation request with:
@@ -33,15 +34,16 @@ Your task is to implement a voting feature based on the feature description and 
 You can take as much time as needed but we planned with a time frame of 1-2h.
 It is okay to submit the challenge without fully solving it. We're all human and have limited time, especially if it is unpaid ;).
 Instead of a 100% solution we are more interested in your approach, considerations and code.
+Dealing with the backend side of things is more important to us than having a full user journey and working forms. You can use the cURL request above to simulate a successful donation form submission without implementing the views and use a rails console to set up data. Please include the code snippets for setting up data if you pursue this approach so we can play with your solution.
 If you have any questions feel free to reach out at any time.
 
 ### Feature description
-During a charity stream, streamers can initiate votes (e.g., challenges, decisions etc.) via a voting feature. Viewers participate by donating to cast their votes for the options provided. The option with the highest voting count wins.
+In the donation form, receivers can ask a question. Donors participate in the voting by donating and selecting one of multiple preconfigured answers to the question. The answer which was selected most frequently wins.
 
 * Only the votes of confirmed donations should be counted.
 * Donating without voting should still be possible.
-* Only one Question can be asked at a time.
-* If a request arrives that would answer a question that is currently not asked the vote should be ignored.
+* Only one question per receiver can be 'active' at a time but multiple can exist which are already answered, or waiting to be answered.
+* If a request arrives that would answer a question that is currently not active the vote should be ignored.
 
 ## Closing remarks
 Thank you for being interested in working with us and improving the world!
