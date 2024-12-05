@@ -1,7 +1,9 @@
 class Donate
+  DonateResult = Data.define(:success, :donation)
+
   def call(receiver_id, amount_in_cents)
     donation = Donation.new(
-      receiver: Receiver.find(receiver_id),
+      receiver: Receiver.find_by(id: receiver_id),
       amount_in_cents:
     )
     # payment = Payment.new()
@@ -10,7 +12,6 @@ class Donate
       # payment.save
     end
 
-    return donation if donation.persisted?
-    nil
+    DonateResult.new(success: donation.persisted?, donation:)
   end
 end

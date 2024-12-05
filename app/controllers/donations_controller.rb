@@ -23,8 +23,11 @@ class DonationsController < ApplicationController
 
   # POST /donations or /donations.json
   def create
+    result = Donate.new.call(donation_params["receiver_id"], donation_params["amount_in_cents"])
+    @donation = result.donation
+
     respond_to do |format|
-      if @donation = Donate.new.call(donation_params["receiver_id"], donation_params["amount_in_cents"])
+      if result.success
         format.html { redirect_to @donation, notice: "Donation was successfully created." }
         format.json { render :show, status: :created, location: @donation }
       else

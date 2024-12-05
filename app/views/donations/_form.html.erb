@@ -12,6 +12,11 @@
   <% end %>
 
   <div>
+    <%= form.label :reveicer, style: "display: block" %>
+    <%= form.select :receiver_id, Receiver.all.map { [_1.name, _1.id] }, include_blank: "select receiver" %>
+  </div>
+
+  <div>
     <%= form.label :amount_in_cents, style: "display: block" %>
     <%= form.number_field :amount_in_cents %>
   </div>
