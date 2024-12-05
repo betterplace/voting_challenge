@@ -52,7 +52,7 @@ group :development, :test do
 
   # Testing Framework
   gem "rspec", "~> 3.13"
-  gem 'rspec-rails'
+  gem "rspec-rails"
 end
 
 group :development do

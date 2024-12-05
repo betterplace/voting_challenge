@@ -1,7 +1,7 @@
 class DonationsController < ApplicationController
   before_action :set_donation, only: %i[ show edit update destroy ]
   # following line makes the cURL request from the README work
-  skip_before_action :verify_authenticity_token, only: [:create] if Rails.env.development?
+  skip_before_action :verify_authenticity_token, only: [ :create ] if Rails.env.development?
 
   # GET /donations or /donations.json
   def index
