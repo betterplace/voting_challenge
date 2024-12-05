@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Version from .tool-versions (can use asdf); default to 3.2+ (e.g. for dependabot)
-ruby file: '.tool-versions' rescue '~> 3.2'
+ruby file: ".tool-versions" rescue "~> 3.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
