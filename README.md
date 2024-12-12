@@ -13,7 +13,7 @@ Please follow the steps below before starting:
     git push -u origin main
     ```
 3. Solve the challenge
-4. Provide access to betterplace devs (@Joerg-Seitz, @diego-souza, and @liesas) so they can have a look. You will receive the email addresses for this during the application process. **Please do not make your solutions public!**
+4. Provide access to betterplace devs (@Joerg-Seitz, @diego-souza, @fwolfst, and @liesas) so they can have a look. You will receive the email addresses for this during the application process. **Please do not make your solutions public!**
 
 ## Setup
 There is nothing out of the ordinary in the application all the commands from a basic rails app should work. You only need to run the bundle.
